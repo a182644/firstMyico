@@ -1,0 +1,20 @@
+body,html,#app{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    height: 100%;
+    min-width: 1366px;
+}
+.el-card{
+    margin-top: 20px;
+}
+.el-table{
+    margin-top: 20px;
+}
+.el-header{
+    padding: 0;
+}
+.el-breadcrumb{
+    margin-bottom: 15px;
+}

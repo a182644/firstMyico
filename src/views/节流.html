@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function throttle(fn, wait) {
+            let pre = 0;
+            return function (...args) {
+                let now = Date.now();
+                if (now - pre >= wait) {
+                    fn.apply(this, args);
+                    pre = now;
+                }
+            }
+        }
+        function handle() {
+            console.log(Matg.random());
+        }
+        window.addEventListener('mousemove', throttle(handle, 1000));
+    </script>
+</body>
+
+</html>
