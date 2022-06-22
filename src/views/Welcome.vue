@@ -1,22 +1,116 @@
 <template>
   <div>
-    <div class="wecbox">欢迎</div>
-    <!-- <div class="wecbox center">!</div>
-    <div class="wecbox footer">!</div> -->
-    <div class="card">
-      <h1>TiKi Platinum</h1>
-      <h2>6228 8076 2232 8768</h2>
-      <h3>van conf banck</h3>
-      <h4>03 / 29</h4>
-    </div>
-    <div class="circle"></div>
-    <div class="rect"></div>
+    <el-row :gutter="20">
+      <el-col :span="16"
+        ><el-card style="height: 50%">
+          <el-row :gutter="20" class="small">
+            <el-col :span="24"
+              ><el-card>
+                <div class="demo-basic--circle">
+                  <el-row :gutter="20">
+                    <el-col :span="6">
+                      <el-avatar
+                        shape="square"
+                        :size="50"
+                        :src="squareUrl"
+                      ></el-avatar
+                    ></el-col>
+                    <el-col :span="2"> <span>阿杰</span></el-col>
+                    <el-col :span="5">
+                      <span
+                        >woの博客：<a
+                          href="http://a182644.github.io"
+                          target="bank"
+                          >冲冲冲！！！</a
+                        ></span
+                      ></el-col
+                    >
+                    <el-col :span="10">
+                      <div class="dete">此刻时间：{{ dateFormat(date) }}</div>
+                    </el-col>
+                  </el-row>
+
+                  <br />
+                </div> </el-card
+            ></el-col>
+            <el-col :span="18"><el-card></el-card></el-col>
+            <el-col :span="6"><el-card></el-card></el-col>
+            <el-col :span="24"><el-card></el-card></el-col>
+          </el-row> </el-card
+      ></el-col>
+      <el-col :span="8"><el-card></el-card></el-col>
+    </el-row>
+
+    <!-- <div class="card">
+      <h1>牢记社会核心价值观</h1>
+      <h2>富强 民主 文明 和谐</h2>
+      <h3>自由 平等 公正 法制</h3>
+      <h4>爱国 敬业 诚信 友善</h4>
+    </div> -->
+    <!-- <div class="circle"></div>
+    <div class="rect"></div> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "Welcome",
+  data() {
+    return {
+      squareUrl:
+        "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
+      ht: `woの博客:<a>a182644.github.io</a>`,
+
+      date: new Date(),
+    };
+  },
+  mounted() {
+    let _this = this; // 声明一个变量指向Vue实例this，保证作用域一致
+    this.timer = setInterval(() => {
+      _this.date = new Date(); // 修改数据date
+    }, 1000);
+  },
+
+  beforeDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+    }
+  },
+
+  methods: {
+    dateFormat(time) {
+      var date = new Date(time);
+      var year = date.getFullYear();
+      /* 在日期格式中，月份是从0开始的，因此要加0
+       * 使用三元表达式在小于10的前面加0，以达到格式统一  如 09:11:05
+       * */
+      var month =
+        date.getMonth() + 1 < 10
+          ? "0" + (date.getMonth() + 1)
+          : date.getMonth() + 1;
+      var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+      var hours =
+        date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+      var minutes =
+        date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+      var seconds =
+        date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+      // 拼接
+      const tim =
+        year +
+        "-" +
+        month +
+        "-" +
+        day +
+        " " +
+        hours +
+        ":" +
+        minutes +
+        ":" +
+        seconds;
+      return tim;
+    },
+  },
 };
 </script>
 
@@ -56,10 +150,10 @@ export default {
   border-left: 1px solid rgba(255, 255, 255, 0.4);
   background: linear-gradient(
     to top right,
-    rgba(90, 149, 207, 0.5),
-    rgba(58, 76, 99, 0.8)
+    rgba(245, 0, 0, 0.5),
+    rgba(245, 0, 0, 0.8)
   );
-  box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.2),
+  box-shadow: 10px -10px 20px rgba(255, 0, 0, 0.2),
     -10px 10px 20px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   border-radius: 20px;
@@ -89,7 +183,7 @@ h4 {
   position: absolute;
   right: 240px;
   bottom: 20px;
-  background: linear-gradient(to top left, rgb(135 116 249), rgb(75 162 237));
+  background: linear-gradient(to top left, rgb(255, 1, 1), rgb(255, 0, 0));
   border-radius: 80px;
 }
 .rect {
@@ -114,9 +208,28 @@ body {
     ),
     radial-gradient(
       circle at 20px 20px,
-      rgba(46, 103, 161, 0.8),
+      rgba(4, 175, 132, 0.8),
       transparent 25%
     ),
     #182336;
+}
+a {
+  text-decoration: none;
+}
+.small {
+  .el-card {
+    margin-top: 50px;
+  }
+}
+.dete {
+  backdrop-filter: blur(5px);
+  background-color: #409eff;
+  font-size: 20px;
+  color: #fff;
+  height: 50px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 1px 1px 1px rgba(245, 0, 0, 0.8);
 }
 </style>

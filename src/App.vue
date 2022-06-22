@@ -21,6 +21,13 @@
       type="warning"
     ></el-button>
 
+    <el-button
+      class="black"
+      @click="black"
+      icon="el-icon-s-home"
+      circle
+    ></el-button>
+
     <Rains v-if="showRains"></Rains>
   </div>
 </template>
@@ -46,6 +53,9 @@ export default {
       this.showRains = !this.showRains;
       this.isRain = !this.isRain;
       // alert("切换显示");
+    },
+    black() {
+      this.$router.push("/welcome");
     },
   },
 };
@@ -76,5 +86,10 @@ export default {
   top: 20px;
   /* z-index: 999; */
   border-radius: 50px;
+}
+.black {
+  position: absolute;
+  right: 300px;
+  top: 15px;
 }
 </style>
