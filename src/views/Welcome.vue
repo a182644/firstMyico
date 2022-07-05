@@ -28,6 +28,7 @@
                     >
                     <el-col :span="9">
                       <div class="dete">此刻时间：{{ dateFormat(date) }}</div>
+                      <!-- <Time></Time> -->
                     </el-col>
                   </el-row>
 
@@ -98,8 +99,12 @@
 </template>
 
 <script>
+// import Time from "../components/Conpoll/time/Time.vue";
 export default {
   name: "Welcome",
+  components: {
+    // Time,
+  },
   data() {
     return {
       squareUrl:

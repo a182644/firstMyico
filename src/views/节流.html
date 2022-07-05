@@ -9,21 +9,25 @@
 </head>
 
 <body>
+    <div style="height: 5000px">
+
+    </div>
     <script>
-        function throttle(fn, wait) {
-            let pre = 0;
-            return function (...args) {
-                let now = Date.now();
-                if (now - pre >= wait) {
-                    fn.apply(this, args);
-                    pre = now;
+        function scrollTest() {
+            console.log('滚动条触发');
+        }
+        function throttle(fun, time) {
+            let t1 = 0 //当前初始时间
+            return function () {
+                let t2 = new Date()//当前时间
+                if (t2 - t1 > time) {
+                    fun.apply(this, arguments)
+                    t1 = t2
                 }
+
             }
         }
-        function handle() {
-            console.log(Matg.random());
-        }
-        window.addEventListener('mousemove', throttle(handle, 1000));
+        document.addEventListener('scroll', throttle(scrollTest, 1000))
     </script>
 </body>
 

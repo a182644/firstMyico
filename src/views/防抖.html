@@ -7,28 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<button id="add">增加</button>
 
 <body>
+
     <script>
-        const debounce = (fn, wait, immediate) => {
-            let timer = null;
-
-            return function (...args) {
-                if (timer) {
-                    clearTimeout(timer);
-                }
-                if (immediate && !timer) {
-                    fn.call(this, args);
-                }
+        let addBtn = document.getElementById('add')
+        function addOne() {
+            console.log('增加一个');
+            console.log(this);
+        }
+        function debounce(fun, time) {
+            let timer
+            return function () {
+                clearTimeout(timer)
+                let args = arguments
                 timer = setTimeout(() => {
-                    fn.call(this, args);
-                }, wait);
-
+                    fun.apply(this, args)
+                }, time)
             }
         }
-
-        const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000, true);
-        document.addEventListener('scroll', betterFn);
+        addBtn.addEventListener('click', debounce(addOne, 500))
     </script>
 </body>
 

@@ -17,4 +17,7 @@ export default {
 </script>
 
 <style>
+.el-breadcrumb :hover {
+  cursor: url(@/assets/arr75.png), auto;
+}
 </style>

@@ -86,4 +86,10 @@ export default {
 </script>
 
 <style>
+.el-main {
+  height: 100vh;
+}
+.el-submenu :hover {
+  cursor: url(../assets/arr75.png), auto;
+}
 </style>

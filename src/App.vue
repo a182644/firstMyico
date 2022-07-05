@@ -25,6 +25,7 @@
       class="black"
       @click="black"
       icon="el-icon-s-home"
+      style="background-color: #409eff; border-color: #409eff; color: #fff"
       circle
     ></el-button>
 
@@ -82,8 +83,8 @@ export default {
 }
 .changebtn {
   position: absolute;
-  right: 100px;
-  top: 20px;
+  right: 200px;
+  top: 15px;
   /* z-index: 999; */
   border-radius: 50px;
 }
@@ -91,5 +92,17 @@ export default {
   position: absolute;
   right: 300px;
   top: 15px;
+}
+body {
+  cursor: url(./assets/arr77.png), auto;
+}
+input {
+  cursor: url(./assets/arr75.png), auto;
+}
+a:hover {
+  cursor: url(./assets/arr74.png), auto;
+}
+button:hover {
+  cursor: url(./assets/arr76.png), auto;
 }
 </style>

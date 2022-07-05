@@ -8,6 +8,7 @@ import VXETable from 'vxe-table'
 import 'vxe-table/lib/style.css'
 import './assets/css/gobal.css'
 
+
 // import Pages from '@/components/Conpoll/Page/Pages.vue'
 // Vue.component('Pages', Pages)
 

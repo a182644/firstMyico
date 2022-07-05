@@ -34,9 +34,21 @@
           prop="username"
           width="100px"
         ></el-table-column>
-        <el-table-column label="用户电话" prop="mobile"></el-table-column>
-        <el-table-column label="邮箱" prop="email"></el-table-column>
-        <el-table-column label="用户角色" prop="role_name"></el-table-column>
+        <el-table-column
+          label="用户电话"
+          prop="mobile"
+          width="150"
+        ></el-table-column>
+        <el-table-column
+          label="邮箱"
+          prop="email"
+          width="150"
+        ></el-table-column>
+        <el-table-column
+          label="用户角色"
+          prop="role_name"
+          width="150"
+        ></el-table-column>
         <el-table-column label="用户状态" width="100px">
           <template v-slot="scope">
             <el-switch
