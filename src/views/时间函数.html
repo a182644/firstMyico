@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">按</button>
+    <script>
+
+        const but = document.querySelector('.btn')
+        but.addEventListener('click', function () {
+            getDateTime();
+            console.log(datate);
+        })
+
+        function getDateTime() {
+            let data = new Date(),
+                year = data.getFullYear(),
+                month = data.getMonth() + 1,
+                day = data.getDate(),
+                hour = data.getHours(),
+                min = data.getMinutes(),
+                second = data.getSeconds()
+
+            // 当月、日、时、分、秒数字小于10时，补0。
+            if (month < 10) {
+                month = '0' + month
+            }
+            if (day < 10) {
+                day = '0' + day
+            }
+            if (hour < 10) {
+                hour = '0' + hour
+            }
+            if (min < 10) {
+                min = '0' + min
+            }
+            if (second < 10) {
+                second = '0' + second
+            }
+
+            return datate = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + second
+        }
+
+
+    </script>
+</body>
+
+</html>

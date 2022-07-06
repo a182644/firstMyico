@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="add">增加</button>
+    <script>
+        function addOne() {
+            console.log('增加一次');
+            // console.log(this);
+        }
+        function debounce(fun, time) {
+            let timer
+            return function () {
+                clearTimeout(timer)
+                let args = arguments
+                timer = setTimeout(() => {
+                    fun.apply(this, args)
+                }, time)
+
+            }
+        }
+
+        const addbtn = document.querySelector('.add')
+        addbtn.addEventListener('click', debounce(addOne, 500))
+    </script>
+</body>
+
+</html>
