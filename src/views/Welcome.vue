@@ -16,15 +16,28 @@
                       ></el-avatar
                     ></el-col>
                     <el-col :span="3">
-                      <span>阿杰&nbsp;&nbsp;&nbsp;||</span></el-col
+                      <span
+                        >阿杰&nbsp;&nbsp;&nbsp;
+                        <span style="color: greenyellow">//</span>
+                        <br />
+                        <p style="color: red; font-size: 15px">
+                          即使是不成熟的尝试，也胜于胎死腹中的策略
+                        </p>
+                      </span></el-col
                     >
                     <el-col :span="8">
                       <span
                         >woの博客&nbsp;<span style="color: red">>>>>>></span
                         ><a href="http://a182644.github.io" target="bank"
                           >冲冲冲！！！</a
-                        ></span
-                      ></el-col
+                        >
+
+                        <p style="color: skyblue; font-size: 10px">
+                          能够坚持到最后一刻的人，就是有本钱成功的人。
+                          只要肯去尝试
+                          即使失败了，也会从失败中学到一些教训，让损失大为减低，如果根本不去尝试，必然不可能学到任何东西。
+                        </p>
+                      </span></el-col
                     >
                     <el-col :span="9">
                       <div class="dete">此刻时间：{{ dateFormat(date) }}</div>
@@ -119,7 +132,9 @@ export default {
   data() {
     return {
       squareUrl:
-        "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
+        // "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
+        // `<img src="121.png">`,
+        "https://static01.imgkr.com/temp/4a717d8f965a41f1b27fec25f8c99996.png",
       ht: `woの博客:<a>a182644.github.io</a>`,
 
       date: new Date(),
